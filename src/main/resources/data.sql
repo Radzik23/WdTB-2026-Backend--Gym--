@@ -14,3 +14,12 @@ insert into user_account (email, display_name, role, created_at) values
     ('s714628@student.wroclaw.merito.pl', 'Dominika', 'USER', current_timestamp),
     ('s871744@student.wroclaw.merito.pl', 'Jakub', 'USER', current_timestamp),
     ('trener@gym.pl', 'Trener', 'USER', current_timestamp);
+
+-- ===== LAB 02 - membership =====
+insert into membership (name, price, duration_days, active) values
+    ('Karnet Open', 150.00, 30, true),
+    ('Karnet Poranny', 99.00, 30, true),
+    ('Wejscie Jednorazowe', 35.00, 1, false);
+-- ===== LAB 02 - fitness_class =====
+
+-- ===== LAB 02 - member =====
