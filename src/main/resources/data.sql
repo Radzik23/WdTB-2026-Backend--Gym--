@@ -26,3 +26,7 @@ insert into fitness_class (class_name, instructor_name, max_participants, catego
     ('Zumba', 'Ewa Nowak', 20, 'CARDIO'),
     ('Trening Silowy', 'Jan Kowalski', 10, 'STRENGTH');
 -- ===== LAB 02 - member =====
+insert into member (first_name, last_name, join_date, phone, city) values
+    ('Tomasz', 'Nowak', '2026-10-01', '123456789', 'Wroclaw'),
+    ('Magdalena', 'Kowalska', '2026-10-15', '987654321', 'Warszawa'),
+    ('Kamil', 'Zielinski', '2026-10-20', '555444333', 'Krakow');
