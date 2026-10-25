@@ -21,5 +21,8 @@ insert into membership (name, price, duration_days, active) values
     ('Karnet Poranny', 99.00, 30, true),
     ('Wejscie Jednorazowe', 35.00, 1, false);
 -- ===== LAB 02 - fitness_class =====
-
+insert into fitness_class (class_name, instructor_name, max_participants, category) values
+    ('Joga dla poczatkujacych', 'Anna Kowalska', 15, 'RELAX'),
+    ('Zumba', 'Ewa Nowak', 20, 'CARDIO'),
+    ('Trening Silowy', 'Jan Kowalski', 10, 'STRENGTH');
 -- ===== LAB 02 - member =====
