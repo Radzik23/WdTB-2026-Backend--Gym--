@@ -26,6 +26,10 @@ public class ClassReservation {
     @Column(name = "reservation_date", nullable = false)
     private LocalDate reservationDate;
 
+    @Column(name = "status", nullable = false, length = 20)
+    private String status;
+
+
     protected ClassReservation() {}
 
     public ClassReservation(Member member, FitnessClass fitnessClass, LocalDate reservationDate) {

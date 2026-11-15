@@ -32,15 +32,23 @@ insert into fitness_class (class_name, trainer_id, max_participants, category) v
     ('Zumba', 2, 20, 'CARDIO'),
     ('Trening Silowy', 3, 10, 'STRENGTH');
 -- ===== LAB 02 - member =====
-insert into member (first_name, last_name, join_date, phone, city, user_account_id) values
-    ('Tomasz', 'Nowak', '2026-10-01', '123456789', 'Wroclaw', 1),
-    ('Magdalena', 'Kowalska', '2026-10-15', '987654321', 'Warszawa', null),
-    ('Kamil', 'Zielinski', '2026-10-20', '555444333', 'Krakow', null);
+
+insert into member (first_name, last_name, join_date, phone, city, user_account_id, membership_id) values
+    ('Tomasz', 'Nowak', '2026-10-01',
+     '123456789', 'Wroclaw', 1, 1),
+
+    ('Magdalena', 'Kowalska', '2026-10-15',
+     '987654321', 'Warszawa', null, 2),
+
+    ('Kamil', 'Zielinski', '2026-10-20',
+     '555444333', 'Krakow', null, 1);
 
 
 
 -- ===== LAB 03 - class_reservation =====
-insert into class_reservation (member_id, fitness_class_id, reservation_date) values
-    (1, 1, '2026-11-20'),
-    (1, 2, '2026-11-22'),
-    (2, 1, '2026-11-21');
+
+insert into class_reservation (member_id, fitness_class_id, reservation_date, status) values
+    (1, 1, '2026-11-20', 'CONFIRMED'),
+    (1, 2, '2026-11-22', 'PENDING'),
+    (2, 1, '2026-11-21', 'CONFIRMED');
+

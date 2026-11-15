@@ -26,6 +26,7 @@ public class Trainer {
     @OneToMany(mappedBy = "trainer")
     private java.util.List<pl.wsb.gym.classes.entity.FitnessClass> classes = new java.util.ArrayList<>();
 
+
     protected Trainer() {}
 
     public Trainer(String firstName, String lastName, String specialization, BigDecimal hourlyRate) {

@@ -27,6 +27,12 @@ public class Member {
     @Embedded
     private ContactInfo contactInfo;
 
+
+    @ManyToOne(fetch = FetchType.LAZY, optional = false)
+    @JoinColumn(name = "membership_id", nullable = false)
+    private pl.wsb.gym.membership.entity.Membership membership;
+
+
     protected Member() {}
 
     public Member(String firstName, String lastName, LocalDate joinDate, ContactInfo contactInfo) {
