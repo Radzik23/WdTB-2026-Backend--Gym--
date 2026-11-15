@@ -1,6 +1,9 @@
 package pl.wsb.gym.member.entity;
 
 import jakarta.persistence.*;
+import pl.wsb.gym.account.domain.UserAccount;
+import pl.wsb.gym.membership.entity.Membership;
+
 import java.time.LocalDate;
 
 @Entity
@@ -19,7 +22,7 @@ public class Member {
 
     @OneToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "user_account_id")
-    private pl.wsb.gym.account.domain.UserAccount account;
+    private UserAccount account;
 
     @Column(name = "join_date", nullable = false)
     private LocalDate joinDate;
@@ -30,7 +33,7 @@ public class Member {
 
     @ManyToOne(fetch = FetchType.LAZY, optional = false)
     @JoinColumn(name = "membership_id", nullable = false)
-    private pl.wsb.gym.membership.entity.Membership membership;
+    private Membership membership;
 
 
     protected Member() {}
