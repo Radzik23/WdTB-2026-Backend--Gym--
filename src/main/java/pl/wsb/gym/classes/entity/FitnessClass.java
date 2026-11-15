@@ -13,8 +13,10 @@ public class FitnessClass {
     @Column(name = "class_name", nullable = false, length = 60)
     private String className;
 
-    @Column(name = "instructor_name", nullable = false, length = 80)
-    private String instructorName;
+
+    @ManyToOne(fetch = FetchType.LAZY, optional = false)
+    @JoinColumn(name = "trainer_id", nullable = false)
+    private pl.wsb.gym.trainer.entity.Trainer trainer;
 
     @Column(name = "max_participants", nullable = false)
     private Integer maxParticipants;
@@ -27,14 +29,12 @@ public class FitnessClass {
 
     public FitnessClass(String className, String instructorName, Integer maxParticipants, ClassCategory category) {
         this.className = className;
-        this.instructorName = instructorName;
         this.maxParticipants = maxParticipants;
         this.category = category;
     }
 
     public Long getId() { return id; }
     public String getClassName() { return className; }
-    public String getInstructorName() { return instructorName; }
     public Integer getMaxParticipants() { return maxParticipants; }
     public ClassCategory getCategory() { return category; }
 }

@@ -20,13 +20,27 @@ insert into membership (name, price, duration_days, active) values
     ('Karnet Open', 150.00, 30, true),
     ('Karnet Poranny', 99.00, 30, true),
     ('Wejscie Jednorazowe', 35.00, 1, false);
+
+-- ===== LAB 03 - trainer =====
+insert into trainer (first_name, last_name, specialization, hourly_rate) values
+    ('Anna', 'Kowalska', 'Joga i stretching', 120.00),
+    ('Ewa', 'Nowak', 'Zumba i Cardio', 100.00),
+    ('Jan', 'Kowalski', 'Trening Silowy', 150.00);
 -- ===== LAB 02 - fitness_class =====
-insert into fitness_class (class_name, instructor_name, max_participants, category) values
-    ('Joga dla poczatkujacych', 'Anna Kowalska', 15, 'RELAX'),
-    ('Zumba', 'Ewa Nowak', 20, 'CARDIO'),
-    ('Trening Silowy', 'Jan Kowalski', 10, 'STRENGTH');
+insert into fitness_class (class_name, trainer_id, max_participants, category) values
+    ('Joga dla poczatkujacych', 1, 15, 'RELAX'),
+    ('Zumba', 2, 20, 'CARDIO'),
+    ('Trening Silowy', 3, 10, 'STRENGTH');
 -- ===== LAB 02 - member =====
-insert into member (first_name, last_name, join_date, phone, city) values
-    ('Tomasz', 'Nowak', '2026-10-01', '123456789', 'Wroclaw'),
-    ('Magdalena', 'Kowalska', '2026-10-15', '987654321', 'Warszawa'),
-    ('Kamil', 'Zielinski', '2026-10-20', '555444333', 'Krakow');
+insert into member (first_name, last_name, join_date, phone, city, user_account_id) values
+    ('Tomasz', 'Nowak', '2026-10-01', '123456789', 'Wroclaw', 1),
+    ('Magdalena', 'Kowalska', '2026-10-15', '987654321', 'Warszawa', null),
+    ('Kamil', 'Zielinski', '2026-10-20', '555444333', 'Krakow', null);
+
+
+
+-- ===== LAB 03 - class_reservation =====
+insert into class_reservation (member_id, fitness_class_id, reservation_date) values
+    (1, 1, '2026-11-20'),
+    (1, 2, '2026-11-22'),
+    (2, 1, '2026-11-21');

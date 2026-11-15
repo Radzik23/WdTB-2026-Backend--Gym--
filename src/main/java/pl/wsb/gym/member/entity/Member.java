@@ -17,6 +17,10 @@ public class Member {
     @Column(name = "last_name", nullable = false, length = 60)
     private String lastName;
 
+    @OneToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name = "user_account_id")
+    private pl.wsb.gym.account.domain.UserAccount account;
+
     @Column(name = "join_date", nullable = false)
     private LocalDate joinDate;
 
