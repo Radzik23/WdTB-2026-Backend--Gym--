@@ -43,12 +43,8 @@ insert into member (first_name, last_name, join_date, phone, city, user_account_
     ('Kamil', 'Zielinski', '2026-10-20',
      '555444333', 'Krakow', null, 1);
 
-
-
 -- ===== LAB 03 - class_reservation =====
-
-insert into class_reservation (member_id, fitness_class_id, reservation_date, status) values
-    (1, 1, '2026-11-20', 'CONFIRMED'),
-    (1, 2, '2026-11-22', 'PENDING'),
-    (2, 1, '2026-11-21', 'CONFIRMED');
-
+insert into class_reservation (member_id, fitness_class_id, reservation_date, notes) values
+    (1, 1, '2026-11-20', 'Pierwsze zajecia'),
+    (1, 2, '2026-11-22', null),
+    (2, 1, '2026-11-21', null);

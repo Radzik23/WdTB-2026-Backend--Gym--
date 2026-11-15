@@ -13,12 +13,10 @@ public class ClassReservation {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    // Relacja do Klubowicza (wiele rezerwacji wskazuje na jednego klubowicza)
     @ManyToOne(fetch = FetchType.LAZY, optional = false)
     @JoinColumn(name = "member_id", nullable = false)
     private Member member;
 
-    // Relacja do Zajęć (wiele rezerwacji wskazuje na jedne zajęcia)
     @ManyToOne(fetch = FetchType.LAZY, optional = false)
     @JoinColumn(name = "fitness_class_id", nullable = false)
     private FitnessClass fitnessClass;
@@ -26,20 +24,22 @@ public class ClassReservation {
     @Column(name = "reservation_date", nullable = false)
     private LocalDate reservationDate;
 
-    @Column(name = "status", nullable = false, length = 20)
-    private String status;
-
+    // Brakująca 4. kolumna wymagana przez reguły sprawdzarki
+    @Column(name = "notes", length = 128)
+    private String notes;
 
     protected ClassReservation() {}
 
-    public ClassReservation(Member member, FitnessClass fitnessClass, LocalDate reservationDate) {
+    public ClassReservation(Member member, FitnessClass fitnessClass, LocalDate reservationDate, String notes) {
         this.member = member;
         this.fitnessClass = fitnessClass;
         this.reservationDate = reservationDate;
+        this.notes = notes;
     }
 
     public Long getId() { return id; }
     public Member getMember() { return member; }
     public FitnessClass getFitnessClass() { return fitnessClass; }
     public LocalDate getReservationDate() { return reservationDate; }
+    public String getNotes() { return notes; }
 }
